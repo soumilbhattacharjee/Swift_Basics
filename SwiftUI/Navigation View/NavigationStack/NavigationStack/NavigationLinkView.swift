@@ -16,7 +16,7 @@ struct DetailView: View {
 struct NavigationLinkView: View {
     var body: some View {
         NavigationStack {
-            // NavigationLink("Home", destination: Text("Home"))
+             NavigationLink("Home", destination: Text("Home"))
             NavigationLink(
                 destination: DetailView()) {
                     HStack(spacing: 3) {
