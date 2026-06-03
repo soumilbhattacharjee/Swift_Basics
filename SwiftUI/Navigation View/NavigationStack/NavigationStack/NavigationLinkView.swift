@@ -18,15 +18,33 @@ struct DetailView: View {
     var body: some View {
         VStack(spacing: 16) {
             NavigationLink("NextView", value: Route.next)
-            // Pop back to previous view in the navigation stack
-            Button("Back") {
-                if !path.isEmpty {
-                    path.removeLast()
-                }
-            }
-            .buttonStyle(.bordered)
         }
         .navigationTitle("Detail View")
+        // How to customize the default back btn in nav bar
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            // For the let toolbar item
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    if !path.isEmpty {
+                        path.removeLast()
+                    }
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                }
+            }
+            // For right tool bar item
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                  print("Right tool bar item pressed!")
+                } label: {
+                    Text("Right")
+                }
+            }
+        }
     }
 }
 
