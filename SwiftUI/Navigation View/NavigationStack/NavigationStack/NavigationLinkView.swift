@@ -39,7 +39,7 @@ struct DetailView: View {
             // For right tool bar item
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                  print("Right tool bar item pressed!")
+                    print("Right tool bar item pressed!")
                 } label: {
                     Text("Right")
                 }
